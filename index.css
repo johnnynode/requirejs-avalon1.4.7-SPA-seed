@@ -1,0 +1,445 @@
+/* reset.css 开始 */
+
+html {
+    color: #000;
+    background: #FFF
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+    margin: 0;
+    padding: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+ol, ul {
+    list-style: none
+}
+
+caption, th {
+    text-align: left
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+q:before, q:after {
+    content: ''
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    *font-size: 100%;
+    outline: none;
+}
+
+legend {
+    color: #000
+}
+
+/* reset css 结束 */
+
+/* 超链接默认样式清除:默认，访问后，悬浮，点击 */
+a:link, a:visited, a:hover, a:active {
+    color: #707070;
+}
+
+a {
+    text-decoration: none;
+}
+
+#yui3-css-stamp.cssreset {
+    display: none
+}
+
+/* 通用样式 开始 */
+.clear {
+    zoom: 1;
+}
+
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+
+.por {
+    position: relative;
+}
+
+/* 通用样式 结束 */
+
+/* navbar 开始 */
+.navbar-body {
+    width: 1024px;
+    margin: 0 auto;
+    padding: 10px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.navbar-body .logo {
+    width: 168px;
+    height: 54px;
+}
+
+.navbar-list a {
+    line-height: 54px;
+    margin-left: 15px;
+    color: #555;
+    text-decoration: none;
+}
+
+.navbar-list a:hover {
+    color: #4d8bfc;
+}
+
+.navbar-login {
+    background: #dce8ff;
+    font-size: 14px;
+    color: #707070;
+    padding: 6px 15px;
+    border-radius: 5px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 12px;
+    margin-left: 15px;
+    cursor: pointer;
+    line-height: 20px;
+    position: relative;
+}
+
+.icon-drop-down {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0;
+    width: 10px;
+    height: 10px;
+    background: url("./images/drop-down.png") no-repeat center;
+}
+
+.navbar-login .icon-drop-down {
+    margin: 5px 0 0 3px;
+}
+
+.showMeMore {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    text-align: center;
+    line-height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    display: block;
+}
+
+.showMeMore a {
+    display: block;
+    width: 100%;
+}
+
+.navbar-list li {
+    float: left;
+    line-height: 54px;
+    margin-right: 20px;
+}
+
+.navbar-list .cur a {
+    color: #4d8bfc;
+}
+
+.ms-controller, .ms-important {
+    display: none !important;
+}
+
+.department {
+    position: relative;
+}
+
+.department-navbar:hover {
+    cursor: pointer;
+}
+
+.department:hover .department-navbar-list {
+    display: block;
+}
+
+.department-navbar-list {
+    display: none;
+    position: absolute;
+    left: 15px;
+    width: 256px;
+    background: rgba(0, 0, 0, .7);
+    line-height: 26px;
+}
+
+.department-navbar-list li {
+    float: none;
+    line-height: 42px;
+    margin-right: 0;
+    padding-left: 5px;
+}
+
+.department-navbar-list li a {
+    line-height: 42px;
+}
+
+.department .department-navbar-list a {
+    color: #fff;
+}
+
+.department-navbar-list li:hover {
+    background: rgba(0, 0, 0, .9);
+}
+
+/* navbar 结束 */
+
+/* 通用footer部分 开始 */
+
+.footer {
+    background: #272525;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+    font-size: 14px;
+    padding-top: 20px;
+}
+
+.common-footer-wrap {
+    text-align: left;
+    line-height: 28px;
+    padding: 15px 0;
+}
+
+.common-footer-wrap a {
+    color: #fff;
+}
+
+.common-footer-wrap .first-col {
+    width: 260px;
+}
+
+.common-footer-wrap .second-col {
+    width: 320px;
+}
+
+.common-footer-wrap .third-col {
+    width: 200px;
+    text-align: center;
+}
+
+.common-footer-wrap .third-col dl {
+    margin-left: 60px;
+    line-height: 40px;
+}
+
+.common-footer-wrap ul {
+    width: 800px;
+    margin: 0 auto;
+}
+
+/* 通用footer部分 结束 */
+
+/* 版心样式 */
+.page-width {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+/* 底部线条 */
+.bd-b {
+    border-bottom: 1px solid #ccc;
+}
+
+/*弹出层*/
+
+.xc_layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 2147000000;
+}
+
+.popBox {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background-color: #ffffff;
+    z-index: 2147000001;
+    width: 640px;
+    height: 300px;
+    margin-left: -370px;
+    margin-top: -200px;
+    border-radius: 5px;
+    color: #535e66;
+    padding: 50px;
+}
+
+.popBox input {
+    border-radius: 5px;
+    padding: 5px 8px;
+    border: 1px solid #b9b9b9;
+    min-width: 240px;
+    font-size: 14px;
+}
+
+.popBox .xc-btn {
+    background: #1b95d4;
+}
+
+.popBox .xc-cancel-btn {
+    background: #e96479;
+}
+
+.popBox .xc-cancel-btn:hover,
+.popBox .xc-btn:hover {
+    cursor: pointer;
+}
+
+.popBox .xc-cancel-btn,
+.popBox .xc-btn {
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 30px;
+    font-weight: 300;
+    border: none;
+    margin: 30px 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/*课程样式*/
+.home-body {
+    padding-top: 20px;
+}
+
+.home-body, .top-body, .common-list-body {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.home-course, .common-item-course {
+    width: 340px;
+    float: left;
+    height: 300px;
+    font-size: 14px;
+}
+
+.course-body {
+    overflow: hidden;
+    margin-right: 30px;
+    line-height: 24px;
+    color: #555;
+    display: block;
+}
+
+.course-img-wrap {
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+.course-img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    transition: all .5s linear 0s;
+    -webkit-transition: all .5s linear 0s;
+}
+
+.course-img:hover {
+    transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    cursor: pointer;
+}
+
+.course-body .course-title {
+    display: block;
+    padding: 10px 0 3px 0;
+    color: #e96378;
+    font-size: 16px;
+}
+
+.course-body .course-time {
+    line-height: 24px;
+}
+
+.course-title:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*表格*/
+.schedule-edit-table,
+.schedule-edit-table tr th,
+.schedule-edit-table tr td {
+    border: 1px solid #ccc;
+}
+
+.schedule-edit-table {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+.schedule-edit-table tr th {
+    text-align: center;
+    background: #efe8ff;
+}
+
+.schedule-edit-table tr th,
+.schedule-edit-table tr td {
+    padding: 10px;
+    line-height: 24px;
+}
