@@ -12,7 +12,7 @@ require.config({
         jquery: ['lib/jquery/jquery-1.12.4'],
         jqueryCookie: ['lib/jquery/jquery.cookie-1.4.1'],
         domReady: ['lib/require/domReady'],
-        utilRouter: ['lib/require/domReady']
+        utilRouter: ['js/util.router']
     },
     shim: {
         avalon: {exports: "avalon"},
