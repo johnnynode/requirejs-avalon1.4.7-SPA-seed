@@ -11,7 +11,8 @@ require.config({
         css: ['lib/require/css'],
         jquery: ['lib/jquery/jquery-1.12.4'],
         jqueryCookie: ['lib/jquery/jquery.cookie-1.4.1'],
-        domReady: ['lib/require/domReady']
+        domReady: ['lib/require/domReady'],
+        utilRouter: ['lib/require/domReady']
     },
     shim: {
         avalon: {exports: "avalon"},
@@ -22,7 +23,8 @@ require.config({
 });
 
 // 引入路由
-require(['avalon', 'domReady!'],
-    function (avalon) {
-        //
+require(['avalon', 'utilRouter', 'domReady!'],
+    function (avalon, utilRouter) {
+        utilRouter.init(); // 初始化路由
+
     });
