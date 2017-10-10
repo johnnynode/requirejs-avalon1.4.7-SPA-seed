@@ -109,3 +109,14 @@ a {
 }
 
 /* 通用样式 结束 */
+
+/* 导航栏样式 */
+.navbar-list {
+    border-bottom: 1px solid #ccc;
+    margin-bottom:10px;
+}
+.navbar-list li {
+    line-height: 30px;
+    margin: 0 10px;
+    padding: 10px 0;
+}

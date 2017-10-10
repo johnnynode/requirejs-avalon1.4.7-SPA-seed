@@ -25,6 +25,12 @@ require.config({
 // 引入路由
 require(['avalon', 'utilRouter', 'domReady!'],
     function (avalon, utilRouter) {
+        // 初始化主model
+        var root = avalon.define({
+            $id: "root",
+            content: "",
+            routerObj: null
+        });
         utilRouter.init(); // 初始化路由
 
     });
