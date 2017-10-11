@@ -39,9 +39,9 @@ define(['avalon', 'mmHistory', 'mmRouter'],
                             });
                             break;
                         case "/lesson/detail":
-                            mainRender("pages/lesson/detail", function () {
+                            mainRender("pages/lesson/detail/detail", function () {
                                 if (avalon.vmodels.lessonDetailCtrl) {
-                                    avalon.vmodels.lessonDetailCtrl.cid = avalon.vmodels.root.routerObj.query.cid + "timestamp=" + new Date().getTime();
+                                    avalon.vmodels.lessonDetailCtrl.cid = avalon.vmodels.root.routerObj.query.id + "timestamp=" + new Date().getTime();
                                 }
                             });
                             break;
