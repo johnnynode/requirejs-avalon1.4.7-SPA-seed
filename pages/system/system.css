@@ -1,0 +1,172 @@
+.system-page {
+
+}
+
+.system-panel {
+    padding-top: 30px;
+}
+
+.system-page .system-left {
+    width: 180px;
+    border-radius: 3px;
+    background-color: #1b95d4;
+    color: #fff;
+}
+
+.system-page .system-left-col {
+    line-height: 40px;
+    font-size: 15px;
+    color: #666;
+    text-align: left;
+}
+
+.system-left-col + .system-left-col {
+    margin-top: 1px;
+}
+
+.system-page .system-left-col a {
+    color: #fff;
+    display: block;
+    height: 100%;
+    font-size: 15px;
+    font-weight: 300;
+    padding-left: 30px;
+}
+
+.system-page .system-left-col a:hover, .system-page .system-left-col.cur a {
+    background-color: #007dbd;
+    padding-left: 22px;
+    border-left: 8px solid #00456c;
+}
+
+.system-left-col-active {
+    background-color: #007dbd;
+    padding-left: 22px;
+    border-left: 8px solid #00456c;
+}
+
+.system-page .system-right {
+    width: 825px;
+    min-height: 320px;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+/* 系统管理通用样式 */
+.system-main-page {
+    padding: 25px 30px 35px;
+}
+
+.system-new-btn {
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 300;
+    border: none;
+    height: 26px;
+    width: 100px;
+    font-size: 14px;
+    background-color: #e96479;
+}
+
+.system-detail-btn {
+    background: #1b95d4;
+}
+
+.system-del-btn {
+    background: #e96479;
+}
+
+.system-detail-btn,
+.system-del-btn {
+    color: #fff;
+    font-weight: 300;
+    font-size: 12px;
+    border: none;
+    border-radius: 50px;
+    padding: 2px 20px;
+    margin: 0 5px;
+}
+
+.system-detail-btn:hover,
+.system-del-btn:hover {
+    cursor: pointer;
+}
+
+.system-table {
+    color: #666;
+    width: 100%;
+    border: 1px solid #ccc;
+    margin-top: 15px
+}
+
+.system-table th {
+    text-align: center;
+}
+
+.system-table tr th,
+.system-table tr td {
+    padding: 13px 18px;
+}
+
+.system-table tr th,
+.system-table tr td {
+    border: 1px solid #ccc;
+}
+
+/* 一些复选框的处理 */
+.select-wrap {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+    text-align: center;
+    margin-right: 10px;
+    border: 1px solid #aaa;
+    border: none \9;
+    padding: 0 15px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    border-radius: 100px;
+}
+
+.select-wrap select {
+    position: relative;
+    height: 100%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    outline: none;
+    padding: 0 30px 0 10px;
+    padding: 0 0 0 10px \0;
+    padding: 0 0 0 10px \9;
+    border: none;
+    border: 1px solid #ccc \0;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.select-wrap .dec-triangle {
+    display: none \0;
+    *display: none;
+    position: absolute;
+    top: 9px;
+    right: 9px;
+    width: 15px;
+    height: 15px;
+    background: url(../../images/select-triangle.png) no-repeat center;
+}
+
+.edit-btn {
+    background-color: #e96479;
+    color: #fff;
+    font-size: 14px;
+    width: 80px;
+    height: 32px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}

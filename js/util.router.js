@@ -9,13 +9,31 @@ define(['avalon', 'mmHistory', 'mmRouter'],
             "/lesson/detail"
         ];
 
+        // 定义系统管理路由列表
+        var sysArr = [
+            "/system/nav1",
+            "/system/nav2",
+            "/system/nav3",
+            "/system/nav4",
+            "/system/nav5",
+        ];
+
         /* 主视图渲染 */
         function mainRender(path, callback) {
-            avalon.log("main-path: ", path);
             require([path], function () {
-
                 avalon.vmodels.root.content = path + ".html";
                 callback && callback();
+            });
+        }
+
+        /* 系统管理视图渲染 */
+        function sysRender(path, callback) {
+            var timer = setTimeout(function () {
+                require([path], function () {
+                    avalon.vmodels.systemCtrl && (avalon.vmodels.systemCtrl.sysContent = path + ".html");
+                    callback && callback();
+                });
+                timer = null; // 释放内存
             });
         }
 
@@ -24,13 +42,11 @@ define(['avalon', 'mmHistory', 'mmRouter'],
             var path = this.path; // 获取路径
             avalon.vmodels.root.routerObj = this; // 挂载到根节点
             window.scrollTo && window.scrollTo(0, 0); // 滚动到顶部，解决单页应用存在的页面缓存问题
-            avalon.log("path: ", path);
-            // var flag = false; // 一个找到路由的标志
+            var flag = false; // 一个找到路由的标志
             // 对主路由进行循环判断
             for (var i = 0, len = mainArr.length; i < len; i++) {
-                console.log("mainArr[i]: ",mainArr[i]);
                 if (path === mainArr[i]) {
-                    // flag = true;
+                    flag = true;
                     // 针对有回调函数的单独处理
                     switch (path) {
                         case "/lesson/list":
@@ -52,6 +68,37 @@ define(['avalon', 'mmHistory', 'mmRouter'],
                     break;
                 }
             }
+
+            // 没找到继续到后台管理中寻找
+            if (!flag) {
+                // 对后台管理路由进行循环判断
+                switch (path) {
+                    case "/system":
+                        flag = false;
+                        avalon.router.navigate("/system/nav1"); // 路由跳转到 /system/nav1
+                        break;
+                    case "/system/":
+                        flag = false;
+                        avalon.router.navigate("/system/nav1"); // 路由跳转到 /system/nav1
+                        break;
+                    default:
+                        // 首先渲染system
+                        mainRender("pages/system/system", function () {
+                            // 然后寻找并渲染system二级页面
+                            for (var i = 0, _len = sysArr.length; i < _len; i++) {
+                                if (path === sysArr[i]) {
+                                    var third = sysArr[i].split("/")[2]; // 例如：["", "system", "statistics"] // 找到第三项
+                                    var sysPath = "pages/system/" + third + "/" + third;
+                                    (flag = true) && sysRender(sysPath, function () {
+
+                                    });
+                                    break;
+                                }
+                            }
+                        });
+                }
+            }
+
         }
 
         return {
@@ -61,8 +108,8 @@ define(['avalon', 'mmHistory', 'mmRouter'],
                 avalon.router.get("/category", callback); // 分类模块
                 avalon.router.get("/lesson/list", callback); // 课程列表
                 avalon.router.get("/lesson/detail", callback); // 课程详情
-                // avalon.router.get("/system/", callback); // 后台管理
-                // avalon.router.get("/system/*path", callback); // 后台管理二级页面
+                avalon.router.get("/system/", callback); // 后台管理
+                avalon.router.get("/system/*path", callback); // 后台管理二级页面
 
                 // 启动历史管理器
                 avalon.history.start({
