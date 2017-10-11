@@ -2,7 +2,7 @@
 
 html {
     color: #000;
-    background: #FFF
+    background: #f9f9f9;
 }
 
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
@@ -113,10 +113,16 @@ a {
 /* 导航栏样式 */
 .navbar-list {
     border-bottom: 1px solid #ccc;
-    margin-bottom:10px;
+    background-color: #fff;
 }
+
 .navbar-list li {
     line-height: 30px;
     margin: 0 10px;
     padding: 10px 0;
+}
+
+.root-content {
+    padding: 20px;
+    min-height: 300px;
 }
