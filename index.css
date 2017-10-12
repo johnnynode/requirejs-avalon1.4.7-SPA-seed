@@ -126,3 +126,9 @@ a {
     padding: 20px;
     min-height: 300px;
 }
+
+/* 版心 */
+.page-width {
+    width: 1024px;
+    margin:0 auto;
+}

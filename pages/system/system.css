@@ -20,10 +20,6 @@
     text-align: left;
 }
 
-.system-left-col + .system-left-col {
-    margin-top: 1px;
-}
-
 .system-page .system-left-col a {
     color: #fff;
     display: block;
@@ -46,11 +42,13 @@
 }
 
 .system-page .system-right {
-    width: 825px;
+    width: 805px;
     min-height: 320px;
     overflow: hidden;
     border-radius: 3px;
     margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 
 /* 系统管理通用样式 */
