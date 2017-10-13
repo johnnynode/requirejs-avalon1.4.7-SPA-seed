@@ -18,7 +18,7 @@ gulp.task('connect', function () {
         port: 9000,
         middleware: function (connect, opt) {
             return [
-                // 下面这段代码是用来做跨域请求用的，target中填写自己的跨域api, 本项目暂未使用到，只作一个掩饰
+                // 下面这段代码是用来做跨域请求用的，target中填写自己的跨域地址, 本项目暂未使用到，只作一个演示
                 // proxy(["/api"], {
                 //     target: '',
                 //     changeOrigin: true,
