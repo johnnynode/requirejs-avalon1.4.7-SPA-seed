@@ -67,8 +67,8 @@ gulp.task('open-browser', function () {
     }
 });
 
-//运行Gulp时,默认的Task
-gulp.task('default', function () {
+//运行Gulp时,开启服务器
+gulp.task('server', function () {
     sh.echo("服务器开启!");
     runSequence(['connect', 'watch'], function () {
         sh.echo('将要打开浏览器访问：http://localhost:9000');
