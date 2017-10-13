@@ -19,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/johnnynode/requirejs-avalon1.4.7-SPA-seed/issues"
   },
-  "homepage": "https://github.com/johnnynode/requirejs-avalon1.4.7-SPA-seed#readme"
+  "homepage": "https://github.com/johnnynode/requirejs-avalon1.4.7-SPA-seed#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-plumber": "^1.1.0",
+    "http-proxy-middleware": "^0.17.4",
+    "process": "^0.11.10",
+    "run-sequence": "^2.2.0",
+    "shelljs": "^0.7.8"
+  }
 }
