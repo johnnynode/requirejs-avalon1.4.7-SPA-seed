@@ -122,6 +122,10 @@ a {
     padding: 10px 0;
 }
 
+.navbar-list li.cur a {
+    color: blue;
+}
+
 .root-content {
     padding: 20px;
     min-height: 300px;
@@ -130,5 +134,5 @@ a {
 /* 版心 */
 .page-width {
     width: 1024px;
-    margin:0 auto;
+    margin: 0 auto;
 }

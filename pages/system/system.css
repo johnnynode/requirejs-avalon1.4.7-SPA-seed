@@ -9,7 +9,7 @@
 .system-page .system-left {
     width: 180px;
     border-radius: 3px;
-    background-color: #1b95d4;
+    background-color: #808080;
     color: #fff;
 }
 
@@ -30,9 +30,9 @@
 }
 
 .system-page .system-left-col a:hover, .system-page .system-left-col.cur a {
-    background-color: #007dbd;
+    background-color: #bdbdbd;
     padding-left: 22px;
-    border-left: 8px solid #00456c;
+    border-left: 8px solid #999;
 }
 
 .system-left-col-active {
