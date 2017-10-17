@@ -1,12 +1,24 @@
 // 用于定义不同类型的ajax请求
-define(['avalon', 'mmHistory', 'mmRouter'],
-    function (avalon) {
+define(['avalon', 'utilTool', 'mmHistory', 'mmRouter'],
+    function (avalon, utilTool) {
         // 定义主视图路由列表
         var mainArr = [
-            "/home",
-            "/category",
-            "/lesson/list",
-            "/lesson/detail"
+            {
+                name:"/home",
+                navClass:"navHome",
+            },
+            {
+                name:"/category",
+                navClass:"navCategory",
+            },
+            {
+                name:"/lesson/list",
+                navClass:"navLessonList",
+            },
+            {
+                name:"/lesson/detail",
+                navClass:"navLessonDetail",
+            }
         ];
 
         // 定义系统管理路由列表
@@ -41,11 +53,13 @@ define(['avalon', 'mmHistory', 'mmRouter'],
         function callback() {
             var path = this.path; // 获取路径
             avalon.vmodels.root.routerObj = this; // 挂载到根节点
-            window.scrollTo && window.scrollTo(0, 0); // 滚动到顶部，解决单页应用存在的页面缓存问题
+            window.scrollTo(0, 0); // 滚动到顶部，解决单页应用存在的页面缓存问题
+            utilTool.handleMainNavBarHash(".navbar-list", mainArr); // 每次路由跳转,检测主导航栏
+
             var flag = false; // 一个找到路由的标志
             // 对主路由进行循环判断
             for (var i = 0, len = mainArr.length; i < len; i++) {
-                if (path === mainArr[i]) {
+                if (path === mainArr[i].name) {
                     flag = true;
                     // 针对有回调函数的单独处理
                     switch (path) {
@@ -63,7 +77,7 @@ define(['avalon', 'mmHistory', 'mmRouter'],
                             break;
                         default:
                             // 无需参数处理的路由
-                            mainRender("pages" + mainArr[i] + mainArr[i]);
+                            mainRender("pages" + mainArr[i].name + mainArr[i].name);
                     }
                     break;
                 }
