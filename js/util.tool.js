@@ -19,5 +19,25 @@ define(['avalon', 'jquery'],
                 }
                 return false;
             },
+            /* 处理导航栏的选中状态的样式交互问题 */
+            handleMainNavBarHash: function (selectorStr, arr) {
+                var hashArr = window.location.hash.split("/"); // 获取hash并分离路径 例子：["#!", "home"]
+                var flag = false;
+                $(selectorStr).children().removeClass("cur"); // 去除所有选中样式
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    if (hashArr[1].indexOf(arr[i]) !== -1) {
+                        flag = true;
+                        // 对含有参数?的判断
+                        if (hashArr[1].indexOf("?") !== -1) {
+                            hashArr[1] = hashArr[1].split("?")[0]; // 例如："department?did=1"
+                        }
+                    }
+                }
+                if (!flag) {
+                    // 没找到匹配的
+                    return;
+                }
+                $(selectorStr).children("." + hashArr[1]).addClass("cur"); // 当前加上cur类
+            },
         }
     });
