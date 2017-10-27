@@ -42,7 +42,6 @@ define(['avalon', 'jquery'],
             handleSysNavBarHash: function (arr) {
                 var hashArr = window.location.hash.split("#!/");
                 hashStr = hashArr[1].split("?")[0];
-                avalon.log(hashStr);
                 $(".navbar-list").children().removeClass("cur"); // 去除主视图所有选中样式
                 $(".system-left-col").children("a").removeClass("cur"); // 去除主视图所有选中样式
 
