@@ -3,8 +3,8 @@ require.config({
     baseUrl: './',
     paths: {
         avalon: ["lib/avalon/avalon"],
-        mmHistory: ['lib/avalon/mmHistory'],
         mmRouter: ['lib/avalon/mmRouter/mmRouter'],
+        mmHistory: ['lib/avalon/mmRouter/mmHistory'],
         mmState: ['lib/avalon/mmRouter/mmState'],
         mmPromise: ['lib/avalon/mmPromise/mmPromise'],
         text: ['lib/require/text'],
@@ -33,5 +33,4 @@ require(['avalon', 'utilRouter', 'domReady!'],
             routerObj: null
         });
         utilRouter.init(); // 初始化路由
-
     });
