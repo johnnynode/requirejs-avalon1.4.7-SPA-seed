@@ -20,11 +20,11 @@ define(['avalon', 'jquery'],
                 return false;
             },
             /* 处理导航栏的选中状态的样式交互问题 */
-            handleMainNavBarHash: function (selectorStr, arr) {
+            handleMainNavBarHash: function (arr) {
                 var hashArr = window.location.hash.split("#!/");
                 hashStr = hashArr[1].split("?")[0];
                 var flag = false;
-                $(selectorStr).children().removeClass("cur"); // 去除所有选中样式
+                $(".navbar-list").children("li").removeClass("cur"); // 去除所有选中样式
                 var num = 0; // 用于标识找到对应路由的下标
                 for (var i = 0, len = arr.length; i < len; i++) {
                     if (("/" + hashStr).indexOf(arr[i].name) !== -1) {
@@ -36,14 +36,31 @@ define(['avalon', 'jquery'],
                 if (!flag) {
                     return;
                 }
-                $(selectorStr).children("." + arr[num].navClass).addClass("cur"); // 当前加上cur类
+                $(".navbar-list").children("." + arr[num].navClass).addClass("cur"); // 当前加上cur类
             },
             /* 处理导航栏的选中状态的样式交互问题 */
-            handleSysNavBarHash: function (navSelectorStr, sysSelectorStr) {
-                var hashArr = window.location.hash.split("/"); // 获取hash并分离路径
-                $(navSelectorStr).children().removeClass("cur"); // 主导航栏上去除所有选中样式
-                $(sysSelectorStr).children().removeClass("cur"); // 系统管理去除所有选中样式
-                $(sysSelectorStr).children("." + hashArr[2]).addClass("cur"); // 系统管理特定部分添加选中状态
+            handleSysNavBarHash: function (arr) {
+                var hashArr = window.location.hash.split("#!/");
+                hashStr = hashArr[1].split("?")[0];
+                avalon.log(hashStr);
+                $(".navbar-list").children().removeClass("cur"); // 去除主视图所有选中样式
+                $(".system-left-col").children("a").removeClass("cur"); // 去除主视图所有选中样式
+
+                var flag = false;
+                $(".navbar-list").children("li").removeClass("cur"); // 去除所有选中样式
+                var num = 0; // 用于标识找到对应路由的下标
+                for (var i = 0, len = arr.length; i < len; i++) {
+                    if (("/" + hashStr).indexOf(arr[i].name) !== -1) {
+                        flag = true;
+                        num = i;
+                    }
+                }
+                // 没找到匹配的
+                if (!flag) {
+                    return;
+                }
+                $(".system-left-col").children("." + arr[num].navClass).addClass("cur"); // 系统管理特定部分添加选中状态
+                $(".navbar-list").children(".navSystem").addClass("cur"); // 主导航上的系统管理添加选中样式
             },
         }
     });

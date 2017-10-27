@@ -9,7 +9,6 @@
 .system-page .system-left {
     width: 180px;
     border-radius: 3px;
-    background-color: #808080;
     color: #fff;
 }
 
@@ -21,18 +20,20 @@
 }
 
 .system-page .system-left-col a {
+    background-color: #47c371;
     color: #fff;
     display: block;
     height: 100%;
     font-size: 15px;
     font-weight: 300;
     padding-left: 30px;
+    margin-bottom: 1px;
 }
 
-.system-page .system-left-col a:hover, .system-page .system-left-col.cur a {
-    background-color: #bdbdbd;
+.system-page .system-left-col a:hover, .system-page .system-left-col a.cur {
+    background-color: #61bce4;
     padding-left: 22px;
-    border-left: 8px solid #999;
+    border-left: 8px solid #3492ed;
 }
 
 .system-left-col-active {

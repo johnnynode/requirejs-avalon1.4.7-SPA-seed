@@ -4,29 +4,44 @@ define(['avalon', 'utilTool', 'mmRouter', 'mmHistory'],
         // 定义主视图路由列表
         var mainArr = [
             {
-                name:"/home",
-                navClass:"navHome",
+                name: "/home",
+                navClass: "navHome",
             },
             {
-                name:"/category",
-                navClass:"navCategory",
+                name: "/category",
+                navClass: "navCategory",
             },
             {
-                name:"/lesson/list",
-                navClass:"navLessonList",
+                name: "/lesson/list",
+                navClass: "navLessonList",
             },
             {
-                name:"/lesson/detail"
+                name: "/lesson/detail"
             }
         ];
 
         // 定义系统管理路由列表
         var sysArr = [
-            "/system/nav1",
-            "/system/nav2",
-            "/system/nav3",
-            "/system/nav4",
-            "/system/nav5",
+            {
+                name: "/system/nav1",
+                navClass: "navSystemNav1"
+            },
+            {
+                name: "/system/nav2",
+                navClass: "navSystemNav2"
+            },
+            {
+                name: "/system/nav3",
+                navClass: "navSystemNav3"
+            },
+            {
+                name: "/system/nav4",
+                navClass: "navSystemNav4"
+            },
+            {
+                name: "/system/nav5",
+                navClass: "navSystemNav5"
+            }
         ];
 
         /* 主视图渲染 */
@@ -54,7 +69,7 @@ define(['avalon', 'utilTool', 'mmRouter', 'mmHistory'],
             var path = this.path; // 获取路径
             avalon.vmodels.root.routerObj = this; // 挂载到根节点
             window.scrollTo(0, 0); // 滚动到顶部，解决单页应用存在的页面缓存问题
-            utilTool.handleMainNavBarHash(".navbar-list", mainArr); // 每次路由跳转,检测主导航栏
+            utilTool.handleMainNavBarHash(mainArr); // 每次路由跳转,检测主导航栏
 
             var flag = false; // 一个找到路由的标志
             // 对主路由进行循环判断
@@ -100,11 +115,11 @@ define(['avalon', 'utilTool', 'mmRouter', 'mmHistory'],
                         mainRender("pages/system/system", function () {
                             // 然后寻找并渲染system二级页面
                             for (var i = 0, _len = sysArr.length; i < _len; i++) {
-                                if (path === sysArr[i]) {
-                                    var third = sysArr[i].split("/")[2]; // 例如：["", "system", "statistics"] // 找到第三项
+                                if (path === sysArr[i].name) {
+                                    var third = sysArr[i].name.split("/")[2]; // 例如：["", "system", "statistics"] // 找到第三项
                                     var sysPath = "pages/system/" + third + "/" + third;
                                     (flag = true) && sysRender(sysPath, function () {
-
+                                        utilTool.handleSysNavBarHash(sysArr);
                                     });
                                     break;
                                 }
