@@ -1,5 +1,5 @@
 // 用于定义不同类型的ajax请求
-define(['avalon', 'utilTool', 'mmHistory', 'mmRouter'],
+define(['avalon', 'utilTool', 'mmRouter', 'mmHistory'],
     function (avalon, utilTool) {
         // 定义主视图路由列表
         var mainArr = [
@@ -16,8 +16,7 @@ define(['avalon', 'utilTool', 'mmHistory', 'mmRouter'],
                 navClass:"navLessonList",
             },
             {
-                name:"/lesson/detail",
-                navClass:"navLessonDetail",
+                name:"/lesson/detail"
             }
         ];
 
@@ -51,6 +50,7 @@ define(['avalon', 'utilTool', 'mmHistory', 'mmRouter'],
 
         // 导航回调
         function callback() {
+            avalon.log("-------cb-------");
             var path = this.path; // 获取路径
             avalon.vmodels.root.routerObj = this; // 挂载到根节点
             window.scrollTo(0, 0); // 滚动到顶部，解决单页应用存在的页面缓存问题
