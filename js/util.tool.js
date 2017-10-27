@@ -23,28 +23,20 @@ define(['avalon', 'jquery'],
             handleMainNavBarHash: function (selectorStr, arr) {
                 var hashArr = window.location.hash.split("#!/");
                 hashStr = hashArr[1].split("?")[0];
-                _hashStr = "/" + hashStr;
-                avalon.log(hashStr);
-                return;
                 var flag = false;
                 $(selectorStr).children().removeClass("cur"); // 去除所有选中样式
-                console.log("hashStr: " + hashStr);
-                console.log("_hashStr: " + _hashStr);
+                var num = 0; // 用于标识找到对应路由的下标
                 for (var i = 0, len = arr.length; i < len; i++) {
-
-                    console.log("arr[i]: " + arr[i]);
-                    if (_hashStr.indexOf(arr[i]) !== -1) {
+                    if (("/" + hashStr).indexOf(arr[i].name) !== -1) {
                         flag = true;
-                        console.log(0);
+                        num = i;
                     }
                 }
                 // 没找到匹配的
                 if (!flag) {
                     return;
                 }
-                console.log(1);
-                $(selectorStr).children("." + hashStr).addClass("cur"); // 当前加上cur类
-                console.log(2);
+                $(selectorStr).children("." + arr[num].navClass).addClass("cur"); // 当前加上cur类
             },
             /* 处理导航栏的选中状态的样式交互问题 */
             handleSysNavBarHash: function (navSelectorStr, sysSelectorStr) {
