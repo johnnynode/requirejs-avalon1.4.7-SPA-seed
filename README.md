@@ -10,7 +10,11 @@ requirejs-avalon1.4.7-SPA-seed
 ### Demo run
 - $ `gulp server`
 
-### Still in development (not finished yet)
+### relative pictures
+<div align=center>
+  <img src="./pics/1.png"/><br><br>
+  <img src="./pics/2.png"/>
+</div>
 
 ### Reference [docs and examples]  
 - http://ued.qunar.com/oniui/mmRouter/avalon.mmRouter.doc.html
