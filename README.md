@@ -10,7 +10,7 @@ requirejs-avalon1.4.7-SPA-seed
 ### Demo run
 - $ `gulp server`
 
-### relative pictures
+###  pictures
 <div align=center>
   <img src="./pics/1.png"/><br><br>
   <img src="./pics/2.png"/>
